@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="cookie-example">
+<head>
+<title>Coockie example</title>
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container" ng-controller="cookieController">
+
+    <form class="form-test">
+        <input type="text" class="form-control" ng-model="cookie" placeholder="some text" autofocus>
+        <button class="btn btn-lg btn-primary btn-block" ng-click=saveCookie()>Save cookie</button>
+    </form>
+
+</div>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="../app/bower_components/angular/angular.min.js"></script>
+<script type="text/javascript" src="./script.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="../angular-cookie.js"></script>
+</body>
+</html>

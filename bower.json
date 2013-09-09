@@ -1,0 +1,23 @@
+{
+  "name": "angular-cookie",
+  "main": "angular-cookie.js",
+  "version": "1.0.0",
+  "authors": [
+    "ivpusic <pusic007@gmail.com>"
+  ],
+  "description": "Angular module for accessing browser cookies",
+  "keywords": [
+    "cookie"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.0.8"
+  }
+}
