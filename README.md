@@ -12,6 +12,8 @@ General signature of main function is
 $cookie(key, value, options);
 ```
 
+#### Set
+
 To create cookie use
 
 ```
@@ -30,11 +32,21 @@ If you want to specify directory where is cookie active use
 $cookie(key, value, { path: '/some/path' });
 ```
 
-If you want to get cookie value use
+#### Get
+
+To get all cookies use
+
+```
+$cookie();
+```
+
+If you want to get cookie with some key use
 
 ```
 $cookie(key);
 ```
+
+#### Remove
 
 And if you want to remove cookie use
 
