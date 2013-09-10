@@ -78,7 +78,7 @@ $cookie.remove(key, { path: '/some/path' });
 Options
 -------
 
-### Domain
+#### Domain
 
 
 ```
@@ -88,7 +88,7 @@ domain: 'example.com'
 The domain tells the browser to which domain the cookie should be sent. 
 If you don't specify it, it becomes the domain of the page that sets the cookie.
 
-### Path
+#### Path
 
 ```
 path: '/'
@@ -96,7 +96,7 @@ path: '/'
 
 The path gives you the chance to specify a directory where the cookie is active.
 
-### Expires
+#### Expires
 
 ```
 expires: 21
@@ -105,11 +105,11 @@ expires: 21
 Each cookie has an expiry date after which it is trashed.
 If you don't specify the expiry date the cookie is trashed when you close the browser.
 
-### Secure
+#### Secure
 
 ```
 secure: true
 ```
 
 The Secure attribute is meant to keep cookie communication limited to encrypted transmission, 
-directing browsers to use cookies only via secure/encrypted connections. 
+directing browsers to use cookies only via secure/encrypted connections.
