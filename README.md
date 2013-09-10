@@ -24,7 +24,7 @@ Usage
 First you need to inject ``angular-cookie`` into your angular module
 
 ```
-var myApp = angular.module('cookie-example', ['ngCookie']);
+var myApp = angular.module('myApp', ['ngCookie']);
 ```
 And now, for example if you want to use it from your controller
 
