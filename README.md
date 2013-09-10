@@ -21,7 +21,7 @@ After this, go at ``127.0.0.1:9001/example`` on you browser, and you will see ru
 Usage
 -----
 
-First you need to inject ``angular-cookie`` into your angular module
+First you need to inject ``ngCookie`` into your angular module.
 
 ```
 var myApp = angular.module('myApp', ['ngCookie']);
