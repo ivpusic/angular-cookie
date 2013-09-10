@@ -16,10 +16,23 @@ npm install
 grunt
 ```
 
-After this, go at ``127.0.0.1:9001/example`` on you browser, and you will see running example of angular-cookie.
+After this, go at ``127.0.0.1:9001/example`` on you browser, and you will see running example of ``angular-cookie``.
 
 Usage
 -----
+
+First you need to inject ``angular-cookie`` into your angular module
+
+```
+var myApp = angular.module('cookie-example', ['ngCookie']);
+```
+And now, for example if you want to use it from your controller
+
+```
+myApp.controller('cookieController', ['$scope', '$cookie', function($scope, $cookie) {
+  // your code here
+}]);
+```
 
 General signature of main function is
 
