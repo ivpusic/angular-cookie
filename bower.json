@@ -12,6 +12,7 @@
     "angular"
   ],
   "license": "MIT",
+  "location": "git@github.com:ivpusic/angular-cookie.git",
   "ignore": [
     "**/.*",
     "node_modules",
