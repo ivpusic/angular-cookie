@@ -3,6 +3,21 @@ angular-cookie
 
 Lightweight Angular module for access to cookies
 
+Run example
+-----------
+
+To run example execute following commands
+
+```
+git clone git@github.com:ivpusic/angular-cookie.git
+cd angular-cookie
+bower install
+npm install
+grunt
+```
+
+After this, go at ``127.0.0.1:9001/example`` on you browser, and you will see running example of angular-cookie.
+
 Usage
 -----
 
