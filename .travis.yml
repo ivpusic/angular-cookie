@@ -1,5 +1,6 @@
 language: node_js
 before_install:
+    - npm install
     - node_modules/.bin/bower install
 
 node_js:
