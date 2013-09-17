@@ -1,4 +1,4 @@
-angular-cookie
+angular-cookie  [![Build Status](https://travis-ci.org/ivpusic/angular-cookie.png?branch=master)](https://travis-ci.org/ivpusic/angular-cookie)
 ==============
 
 Lightweight Angular module for access to cookies
