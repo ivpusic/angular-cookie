@@ -34,7 +34,7 @@
                 var cookies = {}, i, cookie, pos, name;
                 var all = $document.context.cookie;
                 var list = all.split("; ");
-
+                console.log(all);
                 for(i = 0; i < list.length; ++i) {  
                     cookie = list[i];
                     pos = cookie.indexOf("=");        
