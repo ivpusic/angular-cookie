@@ -15,7 +15,7 @@
     "require": "~0.5.0"
   },
   "scripts": {
-    "test": "karma start"
+    "test": "mocha"
   },
   "keywords": [
     "cookie"
