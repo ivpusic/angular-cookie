@@ -1,9 +1,6 @@
 language: node_js
 before_install:
-    - sudo npm -g install mocha
-    - sudo npm -g install bower
-    - bower install
-    - npm install
+    - node_modules/.bin/bower install
 
 node_js:
     - "0.11"

@@ -7,19 +7,22 @@
     "example": "example"
   },
   "dependencies": {
-    "grunt": "~0.4.1",
-    "grunt-contrib-connect": "~0.5.0",
     "mocha": "~1.13.0",
-    "karma": "~0.10.2",
-    "karma-mocha": "~0.1.0",
-    "require": "~0.5.0"
+    "require": "~0.5.0",
+    "bower": "~1.2.6"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "node_modules/.bin/mocha"
   },
   "keywords": [
     "cookie"
   ],
   "author": "Ivan Pusic",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "karma": "~0.10.2",
+    "karma-mocha": "~0.1.0",
+    "grunt": "~0.4.1",
+    "grunt-contrib-connect": "~0.5.0"
+  }
 }
