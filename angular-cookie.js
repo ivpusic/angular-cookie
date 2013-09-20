@@ -1,7 +1,7 @@
 /*
- * Copyright 2013 Ivan Pusic
- */
-(function(angular, undefined) {
+* Copyright 2013 Ivan Pusic
+*/
+(function(angular, $, undefined) {
     'use strict';
 
     angular.module('ngCookie', ['ng']).
@@ -34,7 +34,6 @@
                 var cookies = {}, i, cookie, pos, name;
                 var all = $document.context.cookie;
                 var list = all.split("; ");
-                console.log(all);
                 for(i = 0; i < list.length; ++i) {  
                     cookie = list[i];
                     pos = cookie.indexOf("=");        
@@ -55,13 +54,15 @@
                 return cookies;
             }
             cookieFun.remove = function (key, options) {
-                var opts = {
-                    expires: -1,
-                    path: options.path || ''
-                };
-                cookieFun(key, 0, opts);
+
+                if (cookieFun(key) !== undefined) {
+                    // Must not alter options, thus extending a fresh object...
+                    cookieFun(key, '', $.extend({}, options, { expires: -1 }));
+                    return true;
+                }
+                return false;
             };
             return cookieFun;
         }());
     }]);
-}(window.angular));
+}(window.angular, $));
