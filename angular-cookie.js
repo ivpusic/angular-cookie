@@ -56,7 +56,6 @@
             cookieFun.remove = function (key, options) {
 
                 if (cookieFun(key) !== undefined) {
-                    // Must not alter options, thus extending a fresh object...
                     cookieFun(key, '', $.extend({}, options, { expires: -1 }));
                     return true;
                 }
