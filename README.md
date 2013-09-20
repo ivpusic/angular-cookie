@@ -85,7 +85,7 @@ $cookie.remove(key);
 If cookie which you want to remove is on some specific path use
 
 ```
-$cookie.remove(key, { path: '/some/path' });
+$cookie.remove(key, { path: '/some/path/' });
 ```
 
 Options
