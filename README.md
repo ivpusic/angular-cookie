@@ -3,6 +3,27 @@ angular-cookie  [![Build Status](https://travis-ci.org/ivpusic/angular-cookie.pn
 
 Lightweight Angular module for access to cookies
 
+Installation
+------------
+
+You can install angular-cookie via bower
+
+```
+bower install angular-cookie
+```
+
+Other way to install ``angular-cookie`` is to clone this repo into you project with this command
+
+```
+git clone git@github.com:ivpusic/angular-cookie.git
+```
+
+and then you need to include ``angular-cookie.js`` script into you project
+
+```
+<script src="/path/to/angular-cookie.js"></script>
+```
+
 Run example
 -----------
 
