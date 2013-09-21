@@ -18,7 +18,7 @@ Other way to install ``angular-cookie`` is to clone this repo into you project w
 git clone git@github.com:ivpusic/angular-cookie.git
 ```
 
-and then you need to include ``angular-cookie.js`` script into you project
+Then you need to include ``angular-cookie.js`` script into you project
 
 ```
 <script src="/path/to/angular-cookie.js"></script>
