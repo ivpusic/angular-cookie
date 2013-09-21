@@ -6,7 +6,7 @@ Lightweight Angular module for access to cookies
 Installation
 ------------
 
-You can install angular-cookie via bower
+You can install ``angular-cookie`` via bower
 
 ```
 bower install angular-cookie
