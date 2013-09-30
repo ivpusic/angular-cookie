@@ -21,6 +21,12 @@ git clone git@github.com:ivpusic/angular-cookie.git
 Then you need to include ``angular-cookie.js`` script into you project
 
 ```
+<script src="/path/to/angular-cookie.min.js"></script>
+```
+
+or include `beautified` version with
+
+```
 <script src="/path/to/angular-cookie.js"></script>
 ```
 
