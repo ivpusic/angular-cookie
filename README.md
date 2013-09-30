@@ -32,8 +32,10 @@ To run example execute following commands
 ```
 git clone git@github.com:ivpusic/angular-cookie.git
 cd angular-cookie
-bower install
+npm -g install bower
+npm -g install grunt
 npm install
+bower install
 grunt
 ```
 
