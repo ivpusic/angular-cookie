@@ -14,6 +14,21 @@
         return a;
     }
 
+    function isEmpty(obj) {
+
+        if (obj === null || obj === undefined) {
+            return false;
+        }
+
+        var key;
+        for(key in obj) {
+            if(obj.hasOwnProperty(key)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     angular.module('ngCookie', ['ng']).
     factory('$cookie', ['$document', function ($document) {
         return (function() {
@@ -45,23 +60,25 @@
                 var all = $document.context.cookie;
                 var list = all.split("; ");
                 for(i = 0; i < list.length; ++i) {  
-                    cookie = list[i];
-                    pos = cookie.indexOf("=");        
-                    name = cookie.substring(0, pos);
-                    value = decodeURIComponent(cookie.substring(pos + 1));
+                    if (list[i]) {
+                        cookie = list[i];
+                        pos = cookie.indexOf("=");        
+                        name = cookie.substring(0, pos);
+                        value = decodeURIComponent(cookie.substring(pos + 1));
 
-                    if (key === undefined || key === name) {
-                        try {
-                            cookies[name] = JSON.parse(value);
-                        } catch (e) {
-                            cookies[name] = value;
-                        }
-                        if (key === name) {
-                            return cookies[name];
+                        if (key === undefined || key === name) {
+                            try {
+                                cookies[name] = JSON.parse(value);
+                            } catch (e) {
+                                cookies[name] = value;
+                            }
+                            if (key === name) {
+                                return cookies[name];
+                            }
                         }
                     }
                 }
-                return cookies;
+                return isEmpty(cookies) ? false : cookies;
             }
             cookieFun.remove = function (key, options) {
 

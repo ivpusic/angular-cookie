@@ -103,6 +103,8 @@ If you want to get cookie with some key use
 $cookie(key);
 ```
 
+If any cookie was not found, function returns ``false``.
+
 #### Remove
 
 And if you want to remove cookie use
