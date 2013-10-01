@@ -6,12 +6,13 @@ todoApp.controller('cookieController', ['$scope', '$document', '$cookie', functi
         // key, value, options
         console.log('saving cookie...');
         $cookie('exampleCookie', $scope.cookie, { expires: 7, path: '/example' });
-
+        $cookie('exampleCookie', $scope.cookie, { expires: 7, path: '/'});
         console.log('new cookie value...');
         console.log($cookie('exampleCookie'));
         
         console.log('removing cookie...');
         $cookie.remove('exampleCookie', { path:'/example'} );
+        $cookie.remove('exampleCookie', { path: '/' });
     };
     
     console.log('getting all cookies...');

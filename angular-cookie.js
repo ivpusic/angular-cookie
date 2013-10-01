@@ -1,8 +1,18 @@
 /*
 * Copyright 2013 Ivan Pusic
 */
-(function(angular, $, undefined) {
+(function(angular, undefined) {
     'use strict';
+
+    function extend(a, b){
+        var key;
+        for(key in b) {
+            if(b.hasOwnProperty(key)) {
+                a[key] = b[key];
+            }
+        }
+        return a;
+    }
 
     angular.module('ngCookie', ['ng']).
     factory('$cookie', ['$document', function ($document) {
@@ -56,7 +66,7 @@
             cookieFun.remove = function (key, options) {
 
                 if (cookieFun(key) !== undefined) {
-                    cookieFun(key, '', $.extend({}, options, { expires: -1 }));
+                    cookieFun(key, '', extend(options, { expires: -1 }));
                     return true;
                 }
                 return false;
@@ -64,4 +74,4 @@
             return cookieFun;
         }());
     }]);
-}(window.angular, $));
+}(window.angular));
