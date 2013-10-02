@@ -1,7 +1,7 @@
 /*
 * Copyright 2013 Ivan Pusic
 */
-(function(angular, undefined) {
+(function(angular, document, undefined) {
     'use strict';
 
     function extend(a, b){
@@ -30,7 +30,7 @@
     }
 
     angular.module('ngCookie', ['ng']).
-    factory('$cookie', ['$document', function ($document) {
+    factory('$cookie', [function () {
         return (function() {
             function cookieFun(key, value, options) {
 
@@ -43,8 +43,7 @@
                         options.expires = new Date();
                         options.expires.setDate(options.expires.getDate() + expiresFor);
                     }   
-
-                    return ($document.context.cookie = [
+                    return (document.cookie = [
                         encodeURIComponent(key),
                         '=',
                         encodeURIComponent(value),
@@ -55,10 +54,13 @@
                         ].join('')); 
                 }
 
-                // we are getting value
-                var cookies = {}, i, cookie, pos, name;
-                var all = $document.context.cookie;
-                var list = all.split("; ");
+                var cookies = {}, list = [], i, cookie, pos, name;
+
+                var all = document.cookie;
+                if (all) {
+                    list = all.split("; ");
+                }
+
                 for(i = 0; i < list.length; ++i) {  
                     if (list[i]) {
                         cookie = list[i];
@@ -91,4 +93,4 @@
             return cookieFun;
         }());
     }]);
-}(window.angular));
+}(window.angular, window.document));
