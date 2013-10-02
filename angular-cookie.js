@@ -34,6 +34,8 @@
         return (function() {
             function cookieFun(key, value, options) {
 
+                options = options || {};
+
                 if (value !== undefined) {
                     // we are setting value
                     value = typeof value === 'object' ? JSON.stringify(value) : String(value);
@@ -41,7 +43,13 @@
                     if (typeof options.expires === 'number') {
                         var expiresFor = options.expires;
                         options.expires = new Date();
-                        options.expires.setDate(options.expires.getDate() + expiresFor);
+                        // Trying to delete a cookie; set a date far in the past
+                        if(expiresFor === -1) {
+                            options.expires = new Date('Thu, 01 Jan 1970 00:00:00 GMT');
+                            // A new 
+                        } else {
+                            options.expires.setDate(options.expires.getDate() + expiresFor);    
+                        }
                     }   
                     return (document.cookie = [
                         encodeURIComponent(key),
@@ -83,6 +91,8 @@
                 return isEmpty(cookies) ? false : cookies;
             }
             cookieFun.remove = function (key, options) {
+
+                options = options || {};
 
                 if (cookieFun(key) !== undefined) {
                     cookieFun(key, '', extend(options, { expires: -1 }));

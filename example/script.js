@@ -11,7 +11,7 @@ todoApp.controller('cookieController', ['$scope', '$document', '$cookie', functi
         console.log($cookie('exampleCookie'));
 
         console.log('removing cookie...');
-        $cookie.remove('exampleCookie', { path:'/example'} );
+        $cookie.remove('exampleCookie');
         $cookie.remove('exampleCookie', { path: '/' });
     };
 
