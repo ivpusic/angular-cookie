@@ -50,15 +50,15 @@ After this, go at ``127.0.0.1:9001/example`` on you browser, and you will see ru
 Usage
 -----
 
-First you need to inject ``ngCookie`` into your angular module.
+First you need to inject ``myCookie`` into your angular module.
 
 ```
-var myApp = angular.module('myApp', ['ngCookie']);
+var myApp = angular.module('myApp', ['myCookie']);
 ```
 And now, for example if you want to use it from your controller
 
 ```
-myApp.controller('cookieController', ['$scope', '$cookie', function($scope, $cookie) {
+myApp.controller('cookieController', ['$scope', 'Cookie', function($scope, Cookie) {
   // your code here
 }]);
 ```
@@ -66,7 +66,7 @@ myApp.controller('cookieController', ['$scope', '$cookie', function($scope, $coo
 General signature of main function is
 
 ```
-$cookie(key, value, options);
+Cookie(key, value, options);
 ```
 
 #### Set
@@ -74,19 +74,19 @@ $cookie(key, value, options);
 To create cookie use
 
 ```
-$cookie(key, value);
+Cookie(key, value);
 ```
 
 You can also set some additional options, like number of day when cookie will expire
 
 ```
-$cookie(key, value, { expire: 21 });
+Cookie(key, value, { expire: 21 });
 ```
 
 If you want to specify directory where is cookie active use
 
 ```
-$cookie(key, value, { path: '/some/path' });
+Cookie(key, value, { path: '/some/path' });
 ```
 
 #### Get
@@ -94,29 +94,29 @@ $cookie(key, value, { path: '/some/path' });
 To get all cookies use
 
 ```
-$cookie();
+Cookie();
 ```
 
 If you want to get cookie with some key use
 
 ```
-$cookie(key);
+Cookie(key);
 ```
 
-If any cookie was not found, function returns ``false``.
+If any cookie was not found, function returns ``undefined``.
 
 #### Remove
 
 And if you want to remove cookie use
 
 ```
-$cookie.remove(key);
+Cookie.remove(key);
 ```
 
 If cookie which you want to remove is on some specific path use
 
 ```
-$cookie.remove(key, { path: '/some/path/' });
+Cookie.remove(key, { path: '/some/path/' });
 ```
 
 Options
@@ -129,7 +129,7 @@ Options
 domain: 'example.com'
 ```
 
-The domain tells the browser to which domain the cookie should be sent. 
+The domain tells the browser to which domain the cookie should be sent.
 If you don't specify it, it becomes the domain of the page that sets the cookie.
 
 #### Path
@@ -155,5 +155,5 @@ If you don't specify the expiry date the cookie is trashed when you close the br
 secure: true
 ```
 
-The Secure attribute is meant to keep cookie communication limited to encrypted transmission, 
+The Secure attribute is meant to keep cookie communication limited to encrypted transmission,
 directing browsers to use cookies only via secure/encrypted connections.
