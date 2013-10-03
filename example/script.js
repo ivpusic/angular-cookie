@@ -17,4 +17,6 @@ todoApp.controller('cookieController', ['$scope', '$document', '$cookie', functi
 
     console.log('getting all cookies...');
     console.log($cookie());
+    console.log('getting cookie with key: exampleCookie');
+    console.log($cookie('exampleCookie'));
 }]);

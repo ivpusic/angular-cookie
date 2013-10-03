@@ -103,7 +103,7 @@ If you want to get cookie with some key use
 $cookie(key);
 ```
 
-If any cookie was not found, function returns ``false``.
+If any cookie was not found, function returns ``undefined``.
 
 #### Remove
 
@@ -157,3 +157,8 @@ secure: true
 
 The Secure attribute is meant to keep cookie communication limited to encrypted transmission, 
 directing browsers to use cookies only via secure/encrypted connections.
+
+TODO
+----
+
+- Add tests
