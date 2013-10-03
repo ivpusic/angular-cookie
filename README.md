@@ -50,15 +50,15 @@ After this, go at ``127.0.0.1:9001/example`` on you browser, and you will see ru
 Usage
 -----
 
-First you need to inject ``ngCookie`` into your angular module.
+First you need to inject ``ivpusic.cookie`` into your angular module.
 
 ```
-var myApp = angular.module('myApp', ['ngCookie']);
+var myApp = angular.module('myApp', ['ivpusic.cookie']);
 ```
 And now, for example if you want to use it from your controller
 
 ```
-myApp.controller('cookieController', ['$scope', '$cookie', function($scope, $cookie) {
+myApp.controller('cookieController', ['$scope', 'ipCookie', function($scope, ipCookie) {
   // your code here
 }]);
 ```
@@ -66,7 +66,7 @@ myApp.controller('cookieController', ['$scope', '$cookie', function($scope, $coo
 General signature of main function is
 
 ```
-$cookie(key, value, options);
+ipCookie(key, value, options);
 ```
 
 #### Set
@@ -74,19 +74,19 @@ $cookie(key, value, options);
 To create cookie use
 
 ```
-$cookie(key, value);
+ipCookie(key, value);
 ```
 
 You can also set some additional options, like number of day when cookie will expire
 
 ```
-$cookie(key, value, { expire: 21 });
+ipCookie(key, value, { expire: 21 });
 ```
 
 If you want to specify directory where is cookie active use
 
 ```
-$cookie(key, value, { path: '/some/path' });
+ipCookie(key, value, { path: '/some/path' });
 ```
 
 #### Get
@@ -94,13 +94,13 @@ $cookie(key, value, { path: '/some/path' });
 To get all cookies use
 
 ```
-$cookie();
+ipCookie();
 ```
 
 If you want to get cookie with some key use
 
 ```
-$cookie(key);
+ipCookie(key);
 ```
 
 If any cookie was not found, function returns ``undefined``.
@@ -110,13 +110,13 @@ If any cookie was not found, function returns ``undefined``.
 And if you want to remove cookie use
 
 ```
-$cookie.remove(key);
+ipCookie.remove(key);
 ```
 
 If cookie which you want to remove is on some specific path use
 
 ```
-$cookie.remove(key, { path: '/some/path/' });
+ipCookie.remove(key, { path: '/some/path/' });
 ```
 
 Options
