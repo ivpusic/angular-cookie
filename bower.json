@@ -1,7 +1,7 @@
 {
   "name": "angular-cookie",
   "main": "angular-cookie.js",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "homepage": "https://github.com/ivpusic/angular-cookie",
   "authors": [
     "ivpusic <pusic007@gmail.com>"
@@ -18,9 +18,14 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "example",
+    "karma.conf.js",
+    "LICENSE",
+    "README.md",
+    "Gruntfile.js"
   ],
   "dependencies": {
-    "angular": ">=1.0.8"
+    "angular": "~1.0.8"
   }
 }
