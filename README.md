@@ -77,10 +77,10 @@ To create cookie use
 ipCookie(key, value);
 ```
 
-You can also set some additional options, like number of day when cookie will expire
+You can also set some additional options, like number of day when cookie expires
 
 ```
-ipCookie(key, value, { expire: 21 });
+ipCookie(key, value, { expires: 21 });
 ```
 
 If you want to specify directory where is cookie active use
