@@ -149,6 +149,15 @@ expires: 21
 Each cookie has an expiry date after which it is trashed.
 If you don't specify the expiry date the cookie is trashed when you close the browser.
 
+#### Expiration Unit
+
+```
+expirationUnit: 'minutes'
+```
+
+Allows you to set the expiration time in minutes.
+If this is not specified, any expiration time specified will default to days.
+
 #### Secure
 
 ```
