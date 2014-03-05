@@ -34,7 +34,17 @@ factory('ipCookie', ['$document', function ($document) {
                         options.expires = new Date('Thu, 01 Jan 1970 00:00:00 GMT');
                         // A new 
                     } else {
-                        options.expires.setDate(options.expires.getDate() + expiresFor);    
+                        if (options.expirationUnit !== undefined) {
+                            if (options.expirationUnit === 'minutes') {
+                                options.expires.setMinutes(options.expires.getMinutes() + expiresFor);
+                            }
+                            else {
+                                options.expires.setDate(options.expires.getDate() + expiresFor);
+                            }
+                        }
+                        else {
+                            options.expires.setDate(options.expires.getDate() + expiresFor);
+                        }   
                     }
                 }   
                 return ($document[0].cookie = [
