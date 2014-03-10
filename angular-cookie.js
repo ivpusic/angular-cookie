@@ -51,11 +51,11 @@ factory('ipCookie', ['$document', function ($document) {
                     encodeURIComponent(key),
                     '=',
                     encodeURIComponent(value),
-                    options.expires ? '; expires=' + options.expires.toUTCString() : '',
-                    options.path    ? '; path=' + options.path : '',
-                    options.domain  ? '; domain=' + options.domain : '',
-                    options.secure  ? '; secure' : ''
-                    ].join('')); 
+                    options.expires ? ('; expires=' + options.expires).toUTCString() : '',
+                    options.path    ? ('; path=' + options.path).toUTCString() : '',
+                    options.domain  ? ('; domain=' + options.domain).toUTCString() : '',
+                    options.secure  ? ('; secure').toUTCString() : ''
+                ].join('')); 
             }
 
             list = [];
