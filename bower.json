@@ -1,7 +1,7 @@
 {
   "name": "angular-cookie",
   "main": "angular-cookie.js",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "homepage": "https://github.com/ivpusic/angular-cookie",
   "authors": [
     "ivpusic <pusic007@gmail.com>"
@@ -26,6 +26,6 @@
     "Gruntfile.js"
   ],
   "dependencies": {
-    "angular": "~1.2.0"
+    "angular": "*"
   }
 }
