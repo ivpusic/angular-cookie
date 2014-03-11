@@ -30,6 +30,12 @@ or include `beautified` version with
 <script src="/path/to/angular-cookie.js"></script>
 ```
 
+To rebuild `min.js` version run
+
+```
+grunt build
+```
+
 Run example
 -----------
 
