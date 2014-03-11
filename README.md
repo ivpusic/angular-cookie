@@ -12,6 +12,18 @@ You can install ``angular-cookie`` via bower
 bower install angular-cookie
 ```
 
+Or, if you want to add your ``angular-cookie`` dependency to your `bower.json`
+
+```
+{
+  devDependencies: {
+    "angular-cookie": ""
+  }
+}
+```
+
+After updating your `bower.json` dependencies, you can run `bower install`.
+
 Other way to install ``angular-cookie`` is to clone this repo into you project with this command
 
 ```
