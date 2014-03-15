@@ -1,7 +1,7 @@
 {
   "name": "angular-cookie",
   "main": "angular-cookie.js",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "homepage": "https://github.com/ivpusic/angular-cookie",
   "authors": [
     "ivpusic <pusic007@gmail.com>"
