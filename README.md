@@ -12,13 +12,13 @@ You can install ``angular-cookie`` via bower
 bower install angular-cookie
 ```
 
-Other way to install ``angular-cookie`` is to clone this repo into you project with this command
+Other way to install ``angular-cookie`` is to clone this repo into your project with this command
 
 ```
 git clone git@github.com:ivpusic/angular-cookie.git
 ```
 
-Then you need to include ``angular-cookie.js`` script into you project
+Then you need to include ``angular-cookie.js`` script into your project
 
 ```
 <script src="/path/to/angular-cookie.min.js"></script>
@@ -51,7 +51,7 @@ bower install
 grunt
 ```
 
-After this, go at ``127.0.0.1:9001/example`` on you browser, and you will see running example of ``angular-cookie``.
+After this, go at ``127.0.0.1:9001/example`` in your browser, and you will see running example of ``angular-cookie``.
 
 Usage
 -----
@@ -77,19 +77,19 @@ ipCookie(key, value, options);
 
 #### Set
 
-To create cookie use
+To create a cookie use
 
 ```
 ipCookie(key, value);
 ```
 
-You can also set some additional options, like number of day when cookie expires
+You can also set some additional options, like number of day when a cookie expires
 
 ```
 ipCookie(key, value, { expires: 21 });
 ```
 
-If you want to specify directory where is cookie active use
+If you want to specify a cookie path use
 
 ```
 ipCookie(key, value, { path: '/some/path' });
@@ -103,7 +103,7 @@ To get all cookies use
 ipCookie();
 ```
 
-If you want to get cookie with some key use
+If you want to get a cookie with a specific key use
 
 ```
 ipCookie(key);
@@ -113,13 +113,13 @@ If any cookie was not found, function returns ``undefined``.
 
 #### Remove
 
-And if you want to remove cookie use
+And if you want to remove a cookie use
 
 ```
 ipCookie.remove(key);
 ```
 
-If cookie which you want to remove is on some specific path use
+To remove a cookie on a specific path use
 
 ```
 ipCookie.remove(key, { path: '/some/path/' });
