@@ -36,8 +36,12 @@ factory('ipCookie', ['$document',
               // A new 
             } else {
               if (options.expirationUnit !== undefined) {
-                if (options.expirationUnit === 'minutes') {
+                if (options.expirationUnit === 'hours') {
+                  options.expires.setHours(options.expires.getHours() + expiresFor);
+                } else if (options.expirationUnit === 'minutes') {
                   options.expires.setMinutes(options.expires.getMinutes() + expiresFor);
+                } else if (options.expirationUnit === 'seconds') {
+                  options.expires.setSeconds(options.expires.getSeconds() + expiresFor);
                 } else {
                   options.expires.setDate(options.expires.getDate() + expiresFor);
                 }

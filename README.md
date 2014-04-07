@@ -161,7 +161,7 @@ If you don't specify the expiry date the cookie is trashed when you close the br
 expirationUnit: 'minutes'
 ```
 
-Allows you to set the expiration time in minutes.
+Allows you to set the expiration time in hours, minutes or seconds.
 If this is not specified, any expiration time specified will default to days.
 
 #### Secure
