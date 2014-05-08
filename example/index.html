@@ -1,16 +1,61 @@
 <!DOCTYPE html>
 <html ng-app="cookie-example">
 <head>
-<title>Coockie example</title>
-<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet"/>
-<link href="style.css" rel="stylesheet"/>
+    <title>Cookie example</title>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"/>
+    <style type="text/css">
+    body {
+      padding-top: 40px;
+      padding-bottom: 40px;
+      background-color: #eee;
+    }
+    .form-test {
+      max-width: 330px;
+      padding: 15px;
+      margin: 0 auto;
+    }
+    </style>
 </head>
 <body>
 <div class="container" ng-controller="cookieController">
 
     <form class="form-test">
-        <input type="text" class="form-control" ng-model="cookie" placeholder="some text" autofocus>
-        <button class="btn btn-lg btn-primary btn-block" ng-click=saveCookie()>Save cookie</button>
+      <div class="alert" ng-class="'alert-' + messageStyle" ng-if="message">{{message}}</div>
+      <div class="row">
+        <div class="col-lg-4">
+          <label>Text:</label>
+        </div>
+        <div class="col-lg-8">
+          <input type="text" class="form-control" ng-model="cookie" placeholder="Enter text to store..." autofocus>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-lg-4">
+          <label>Store for:</label>
+        </div>
+        <div class="col-lg-3">
+          <input type="text" class="form-control" ng-model="expires" value="7">
+        </div>
+        <div class="col-lg-5">
+          <select class="form-control" ng-model="expirationUnit">
+            <option>days</option>
+            <option>hours</option>
+            <option>minutes</option>
+            <option>seconds</option>
+          </select>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-lg-6">
+          <button class="btn btn-primary btn-block" ng-click="saveCookie()"
+                  ng-disabled="cookie == null || cookie == ''">Save cookie</button>
+        </div>
+        <div class="col-lg-6">
+          <button class="btn btn-danger btn-block" ng-click="deleteCookie()">Delete cookie</button>
+        </div>
+      </div>
     </form>
 
 </div>

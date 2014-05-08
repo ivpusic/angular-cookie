@@ -56,10 +56,10 @@ After this, go at ``127.0.0.1:9001/example`` in your browser, and you will see r
 Usage
 -----
 
-First you need to inject ``ivpusic.cookie`` into your angular module.
+First you need to inject ``ipCookie`` into your angular module.
 
 ```
-var myApp = angular.module('myApp', ['ivpusic.cookie']);
+var myApp = angular.module('myApp', ['ipCookie']);
 ```
 And now, for example if you want to use it from your controller
 
@@ -161,7 +161,7 @@ If you don't specify the expiry date the cookie is trashed when you close the br
 expirationUnit: 'minutes'
 ```
 
-Allows you to set the expiration time in minutes.
+Allows you to set the expiration time in ``hours``, ``minutes`` or ``seconds``.
 If this is not specified, any expiration time specified will default to days.
 
 #### Secure
