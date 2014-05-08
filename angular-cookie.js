@@ -3,7 +3,8 @@
  * Contributors:
  *   Matjaz Lipus
  */
-angular.module('ivpusic.cookie', ['ng']).
+angular.module('ivpusic.cookie', ['ipCookie']);
+angular.module('ipCookie', ['ng']).
 factory('ipCookie', ['$document',
   function ($document) {
     'use strict';
