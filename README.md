@@ -83,6 +83,8 @@ To create a cookie use
 ipCookie(key, value);
 ```
 
+The `value` supports strings, numbers, booleans, arrays and objects and will be automatically serialized into the cookie.
+
 You can also set some additional options, like number of day when a cookie expires
 
 ```
@@ -110,6 +112,8 @@ ipCookie(key);
 ```
 
 If any cookie was not found, function returns ``undefined``.
+
+The returned value will be automatically deserialized.
 
 #### Remove
 
