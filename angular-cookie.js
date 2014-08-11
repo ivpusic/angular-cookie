@@ -3,14 +3,21 @@
  * Contributors:
  *   Matjaz Lipus
  */
-(function (window, angular, undefined) {
+(function(window, angular, undefined) {
 	'use strict';
 
 	angular.module('ivpusic.cookie', ['ipCookie']);
 	angular.module('ipCookie', ['ng']).
-	provider('ipCookie', function () {
+	provider('ipCookie', function() {
+		var defaults = {
+		};
+
+		this.setDefaults = function(newDefaults) {
+			angular.extend(defaults, newDefaults);
+		};
+
 		this.$get = ['$document',
-			function ($document) {
+			function($document) {
 
 				function cookieFun(key, value, options) {
 
@@ -24,7 +31,7 @@
 					  all,
 					  expiresFor;
 
-					options = options || {};
+					options = angular.extend({}, defaults, options);
 
 					if (value !== undefined) {
 						// we are setting value
@@ -95,7 +102,7 @@
 						return cookies;
 					}
 				}
-				cookieFun.remove = function (key, options) {
+				cookieFun.remove = function(key, options) {
 					var hasCookie = cookieFun(key) !== undefined;
 
 					if (hasCookie) {
