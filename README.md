@@ -177,6 +177,9 @@ secure: true
 The Secure attribute is meant to keep cookie communication limited to encrypted transmission, 
 directing browsers to use cookies only via secure/encrypted connections.
 
+## Notes
+- String (only digits) encoding -> [check this PR](https://github.com/ivpusic/angular-cookie/pull/29)
+
 TODO
 ----
 
