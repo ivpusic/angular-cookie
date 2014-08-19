@@ -26,7 +26,7 @@ factory('ipCookie', ['$document',
 
         if (value !== undefined) {
           // we are setting value
-          value = typeof value === 'object' ? JSON.stringify(value) : String(value);
+          value = typeof value === 'object' ? JSON.stringify(value) : JSON.stringify(String(value));
 
           if (typeof options.expires === 'number') {
             expiresFor = options.expires;
