@@ -20,13 +20,13 @@ git clone git@github.com:ivpusic/angular-cookie.git
 
 Then you need to include ``angular-cookie.js`` script into your project
 
-```
+```html
 <script src="/path/to/angular-cookie.min.js"></script>
 ```
 
 or include `beautified` version with
 
-```
+```html
 <script src="/path/to/angular-cookie.js"></script>
 ```
 
@@ -58,12 +58,12 @@ Usage
 
 First you need to inject ``ipCookie`` into your angular module.
 
-```
+```javascript
 var myApp = angular.module('myApp', ['ipCookie']);
 ```
 And now, for example if you want to use it from your controller
 
-```
+```javascript
 myApp.controller('cookieController', ['$scope', 'ipCookie', function($scope, ipCookie) {
   // your code here
 }]);
@@ -71,7 +71,7 @@ myApp.controller('cookieController', ['$scope', 'ipCookie', function($scope, ipC
 
 General signature of main function is
 
-```
+```javascript
 ipCookie(key, value, options);
 ```
 
@@ -79,7 +79,7 @@ ipCookie(key, value, options);
 
 To create a cookie use
 
-```
+```javascript
 ipCookie(key, value);
 ```
 
@@ -87,13 +87,13 @@ The `value` supports strings, numbers, booleans, arrays and objects and will be 
 
 You can also set some additional options, like number of day when a cookie expires
 
-```
+```javascript
 ipCookie(key, value, { expires: 21 });
 ```
 
 If you want to specify a cookie path use
 
-```
+```javascript
 ipCookie(key, value, { path: '/some/path' });
 ```
 
@@ -101,13 +101,13 @@ ipCookie(key, value, { path: '/some/path' });
 
 To get all cookies use
 
-```
+```javascript
 ipCookie();
 ```
 
 If you want to get a cookie with a specific key use
 
-```
+```javascript
 ipCookie(key);
 ```
 
@@ -119,13 +119,13 @@ The returned value will be automatically deserialized.
 
 And if you want to remove a cookie use
 
-```
+```javascript
 ipCookie.remove(key);
 ```
 
 To remove a cookie on a specific path use
 
-```
+```javascript
 ipCookie.remove(key, { path: '/some/path/' });
 ```
 
@@ -176,6 +176,19 @@ secure: true
 
 The Secure attribute is meant to keep cookie communication limited to encrypted transmission, 
 directing browsers to use cookies only via secure/encrypted connections.
+
+
+## Defaults
+To set defaults for the options you can use the ``ipCookieProvider`` as follows:
+
+```javascript
+myApp.config(['ipCookieProvider', function(ipCookieProvider) {
+	ipCookieProvider.setDefaults({
+		path: '/',
+		expires: 21
+	});
+}]);
+```
 
 ## Notes
 - String (only digits) encoding -> [check this PR](https://github.com/ivpusic/angular-cookie/pull/29)
