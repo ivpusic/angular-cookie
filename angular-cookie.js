@@ -8,6 +8,14 @@ angular.module('ipCookie', ['ng']).
 factory('ipCookie', ['$document',
   function ($document) {
     'use strict';
+      
+    function tryDecodeURIComponent(value) {
+        try {
+            return decodeURIComponent(value);
+        } catch(e) {
+              // Ignore any invalid uri component
+        }
+    }
 
     return (function () {
       function cookieFun(key, value, options) {
@@ -74,7 +82,9 @@ factory('ipCookie', ['$document',
             cookie = list[i];
             pos = cookie.indexOf('=');
             name = cookie.substring(0, pos);
-            value = decodeURIComponent(cookie.substring(pos + 1));
+            value = tryDecodeURIComponent(cookie.substring(pos + 1));
+            if(angular.isUndefined(value))
+              continue;
 
             if (key === undefined || key === name) {
               try {
