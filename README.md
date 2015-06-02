@@ -97,6 +97,12 @@ If you want to specify a cookie path use
 ipCookie(key, value, { path: '/some/path' });
 ```
 
+If you want to set the encode or decode functions use
+
+```
+ipCookie(key, value, { encode: function (value) { return value; } });
+```
+
 #### Get
 
 To get all cookies use
@@ -114,6 +120,12 @@ ipCookie(key);
 If any cookie was not found, function returns ``undefined``.
 
 The returned value will be automatically deserialized.
+
+If you want to pass an options object, you will need to also pass 'undefined' as the second parameter:
+
+```
+ipCookie(key, undefined, {decode: function (value) { return value; }};
+```
 
 #### Remove
 
@@ -176,6 +188,26 @@ secure: true
 
 The Secure attribute is meant to keep cookie communication limited to encrypted transmission, 
 directing browsers to use cookies only via secure/encrypted connections.
+
+#### Encode function
+
+```
+encode: function (value) { return value; }
+```
+
+The method that will be used to encode the cookie value (should be passed when using Set).
+
+Default: encodeURIComponent.
+
+#### Decode function
+
+```
+decode: function (value) { return value; }
+```
+
+The method that will be used to decode extracted cookie values (should be passed when using Get).
+
+Default: decodeURIComponent.
 
 ## Notes
 - String (only digits) encoding -> [check this PR](https://github.com/ivpusic/angular-cookie/pull/29)
