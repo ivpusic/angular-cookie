@@ -52,6 +52,8 @@ factory('ipCookie', ['$document',
                 options.expires.setMinutes(options.expires.getMinutes() + expiresFor);
               } else if (options.expirationUnit === 'seconds') {
                 options.expires.setSeconds(options.expires.getSeconds() + expiresFor);
+              } else if (options.expirationUnit === 'milliseconds') {
+                options.expires.setMilliseconds(options.expires.getMilliseconds() + expiresFor);
               } else {
                 options.expires.setDate(options.expires.getDate() + expiresFor);
               }
