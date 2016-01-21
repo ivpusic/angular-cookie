@@ -1,6 +1,6 @@
 {
   "name": "angular-cookie",
-  "version": "4.0.9",
+  "version": "4.0.10",
   "description": "Lightweight Angular module for access to cookies",
   "main": "angular-cookie.js",
   "directories": {
