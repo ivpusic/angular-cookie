@@ -2,7 +2,7 @@
   "name": "angular-cookie",
   "version": "4.0.10",
   "description": "Lightweight Angular module for access to cookies",
-  "main": "angular-cookie.js",
+  "main": "index.js",
   "directories": {
     "example": "example",
     "test": "test"
