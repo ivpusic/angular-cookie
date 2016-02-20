@@ -97,6 +97,7 @@ factory('ipCookie', ['$document',
                 cookies[name] = value;
               }
               if (key === name) {
+                name=encodeURIComponent(name);
                 return cookies[name];
               }
               hasCookies = true;
@@ -108,6 +109,7 @@ factory('ipCookie', ['$document',
         }
       }
       cookieFun.remove = function (key, options) {
+        key=encodeURIComponent(key);
         var hasCookie = cookieFun(key) !== undefined;
 
         if (hasCookie) {
