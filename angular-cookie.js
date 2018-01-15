@@ -30,7 +30,7 @@ factory('ipCookie', ['$document',
           all,
           expiresFor;
 
-        options = options || {};
+        options = angular.extend({}, options);
         var dec = options.decode || tryDecodeURIComponent;
         var enc = options.encode || encodeURIComponent;
 
